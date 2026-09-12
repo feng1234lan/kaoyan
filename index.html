@@ -1026,6 +1026,9 @@ try{
   const raw=localStorage.getItem(LS_KEY);
   state=raw?Object.assign({},DEFAULT,JSON.parse(raw)):JSON.parse(JSON.stringify(DEFAULT));
 }catch(e){state=JSON.parse(JSON.stringify(DEFAULT));}
+// 预设Supabase配置（自动同步，无需手动填写）
+if(!state.supabaseUrl)state.supabaseUrl='https://vnpffenshpfomoxofcpw.supabase.co';
+if(!state.supabaseKey)state.supabaseKey='sb_publishable_s2SPc47ygsSZfhhOEIajWg_jHyKCXZ7';
 
 /* ===== 云端同步（Supabase） ===== */
 let sbClient=null;
